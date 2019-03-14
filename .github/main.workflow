@@ -3,6 +3,11 @@ workflow "Terraform" {
   on       = "pull_request"
 }
 
+workflow "Release" {
+  on = "push"
+  resolves = ["goreleaser"]
+}
+
 action "filter-to-pr-open-synced" {
   uses = "actions/bin/filter@master"
   args = "action 'opened|synchronize'"
@@ -36,4 +41,16 @@ action "terraform-validate" {
   env = {
     TF_ACTION_WORKING_DIR = "./examples/basic"
   }
+}
+
+action "is-tag" {
+  uses = "actions/bin/filter@master"
+  args = "tag"
+}
+
+action "goreleaser" {
+  uses = "docker://goreleaser/goreleaser"
+  secrets = ["GITHUB_TOKEN"]
+  args = "release"
+  needs = ["is-tag"]
 }

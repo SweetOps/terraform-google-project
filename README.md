@@ -2,6 +2,8 @@
 
 The terraform module for creation and management of a GCP project with normalized name and labels.
 
+## Usage
+
 ```hcl
 module "my_awesome_project" {
   source    = "git::https://github.com/SweetOps/terraform-google-project.git?ref=master"
