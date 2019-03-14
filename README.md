@@ -4,7 +4,7 @@ The terraform module for creation and management of a GCP project with normalize
 
 ```hcl
 module "my_awesome_project" {
-  source    = "../"
+  source    = "git::https://github.com/SweetOps/terraform-google-project.git?ref=master"
   name      = "awesome"
   stage     = "production"
   namespace = "sweetops"
