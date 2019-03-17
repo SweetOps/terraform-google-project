@@ -20,4 +20,5 @@ resource "google_project" "default" {
   folder_id           = "${var.folder_id}"
   skip_delete         = "${var.enable_deletion_protection}"
   auto_create_network = "${var.auto_create_network}"
+  billing_account     = "${var.billing_account_id}"
 }

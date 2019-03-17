@@ -68,3 +68,8 @@ variable "auto_create_network" {
   default     = "true"
   description = "Create the 'default' network automatically"
 }
+
+variable "billing_account_id" {
+  description = "The alphanumeric ID of the billing account this project belongs to"
+  default     = ""
+}
