@@ -6,10 +6,11 @@ The terraform module for creation and management of a GCP project with normalize
 
 ```hcl
 module "my_awesome_project" {
-  source    = "git::https://github.com/SweetOps/terraform-google-project.git?ref=master"
-  name      = "awesome"
-  stage     = "production"
-  namespace = "sweetops"
+  source             = "git::https://github.com/SweetOps/terraform-google-project.git?ref=master"
+  name               = "awesome"
+  stage              = "production"
+  namespace          = "sweetops"
+  billing_account_id = "21C1F0-PKL92E-E25235"
 }
 ```
 
@@ -23,7 +24,6 @@ module "my_awesome_project" {
 | attributes                 | Additional attributes (e.g. `1`)                                                                |  list  | `<list>`  |    no    |
 | auto_create_network        | Create the 'default' network automatically                                                      | string | `"true"`  |    no    |
 | billing_account_id         | The alphanumeric ID of the billing account this project belongs to                              | string |   `""`    |    no    |
-| context                    | Default context to use for passing state between label invocations                              |  map   |  `<map>`  |    no    |
 | delimiter                  | Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes`       | string |   `"-"`   |    no    |
 | enable_deletion_protection | If true, the Terraform resource can be deleted without deleting the Project via the Google API. | string | `"false"` |    no    |
 | enabled                    | Set to false to prevent the module from creating any resources                                  | string | `"true"`  |    no    |
