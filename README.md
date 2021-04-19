@@ -17,13 +17,16 @@ module "my_awesome_project" {
 <!--- BEGIN_TF_DOCS --->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.14 |
+| google | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| google | n/a |
+| google | >= 3.0 |
 
 ## Inputs
 
